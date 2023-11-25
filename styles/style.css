@@ -43,23 +43,27 @@ ol {
   grid-template-columns: 1.8fr 1fr;
   align-items: end;
   gap: 30px;
-  min-width: 1140px;
+  width: 1140px;
   margin: auto;
 }
 
 .result__video-container {
+  display: flex;
   position: relative;
-  min-width: 711px;
-  min-height: 386px;
+  max-width: 770px;
+  max-height: 386px;
+}
+
+.result__video {
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .search-form {
   display: grid;
-  grid-template-columns: 1.19fr 1.02fr 1fr;
+  grid-template-columns: 1.15fr 1.07fr 1fr;
   justify-items: stretch;
-  align-items: center;
   gap: 40px;
   margin-top: 16px;
 }
@@ -86,10 +90,6 @@ input {
 
 .search-form__label:hover {
   text-decoration: underline;
-}
-
-.search-form__label:focus {
-  outline: none;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -130,14 +130,13 @@ input {
 
 .search-form__checkbox-list {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
 }
 
 .search-form__pseudo-checkbox {
   display: inline-block;
   width: 19px;
   height: 19px;
-  margin-right: 5px;
   border: 1px solid #fff;
   vertical-align: middle;
   cursor: pointer;
@@ -151,7 +150,7 @@ input {
 
 .button {
   width: 100%;
-  max-height: 34px;
+  min-height: 34px;
   border: 1px solid #fff;
   color: inherit;
   font-family: inherit;
@@ -185,12 +184,11 @@ input {
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 26px;
-  height: 534px;
+  gap: 20px;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -204,7 +202,7 @@ input {
 .content__list {
   position: relative;
   display: block;
-  min-height: 300px;
+  height: 300px;
   overflow: auto;
 }
 
@@ -213,6 +211,10 @@ input {
   margin: 2px;
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link:active {
+  background: #545050;
 }
 
 .content__card-link:hover {
@@ -231,16 +233,13 @@ input {
   background: #545050;
 }
 
-.result__video {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
+.content__list-item:not(:last-child) {
+  margin-bottom: 35px;
 }
 
 .content__video-card {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
 }
 
 .content__video-card-description-container {
@@ -250,7 +249,7 @@ input {
 
 .content__video-card-title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
@@ -262,9 +261,7 @@ input {
 }
 
 .content__video-card-thumbnail {
-  width: auto;
-  max-width: 194px;
-  height: auto;
-  object-fit: contain;
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
 }
-
